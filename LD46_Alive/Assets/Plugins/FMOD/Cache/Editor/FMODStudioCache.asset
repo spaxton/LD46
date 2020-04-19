@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8241039212163882345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambience_Ship_Rumble
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambience_Ship_Rumble
+  guid: 9c5897fd9ba72143aaae48913bbbaac4
+  Banks:
+  - {fileID: -3684285428669577228}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6250
+--- !u!114 &-7332475775733511988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Laser_Normal_Fire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Laser_Normal_Fire
+  guid: 2695491ee9cd9f4e9b301030d99af873
+  Banks:
+  - {fileID: -3684285428669577228}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-5295664427058341110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,7 +63,30 @@ MonoBehaviour:
   lastModified: 637228323634052647
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &-5090038263275668316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Laser_Suck
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Laser_Suck
+  guid: ddbc808295ea1140975f85e8510d9cf0
+  Banks:
+  - {fileID: -3684285428669577228}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2807
 --- !u!114 &-3990578437313024664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,6 +105,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3684285428669577228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: LD46_FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637228501760000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,14 +137,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 4738726061644407472}
-  - {fileID: -5295664427058341110}
-  EditorEvents: []
+  - {fileID: -3684285428669577228}
+  EditorEvents:
+  - {fileID: -7332475775733511988}
+  - {fileID: -8241039212163882345}
+  - {fileID: -5090038263275668316}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5295664427058341110}
+  - {fileID: -3684285428669577228}
   StringsBanks:
   - {fileID: 4738726061644407472}
-  stringsBankWriteTime: 637228323634062689
+  stringsBankWriteTime: 637228501760000000
   cacheVersion: 3
 --- !u!114 &4738726061644407472
 MonoBehaviour:
@@ -73,11 +163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: LD46_FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637228323634062689
+  lastModified: 637228501760000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 688
+    Value: 856
   Exists: 1
 --- !u!114 &7518564156783099462
 MonoBehaviour:
