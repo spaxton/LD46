@@ -55,7 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\scr_factory.cs" />
+     <Compile Include="Assets\Code\scr_player.cs" />
+     <Compile Include="Assets\Code\scr_pollution.cs" />
      <Compile Include="Assets\Code\scr_rotation.cs" />
+     <Compile Include="Assets\Code\scr_spawnController.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/sethpaxton/Desktop/Projects/LD46_disasterous/LD46/LD46_Alive/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
