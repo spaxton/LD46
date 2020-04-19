@@ -107,4 +107,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PolPrefab: {fileID: 4068638548067193427}
-  earf: {fileID: 0}
+  lifetime: 10
+  damage: 3

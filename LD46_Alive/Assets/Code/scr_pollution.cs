@@ -7,11 +7,15 @@ public class scr_pollution : MonoBehaviour
     public GameObject PolPrefab;
     private Vector3 target = new Vector3(0.0f, 0.0f, 0.0f);
     bool orbiting = true;
+    public int lifetime;
+    public int damage;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        Kys();
+        StartCoroutine(kysCoroutine());
+        player = GameObject.Find("Space_station");
     }
 
     // Update is called once per frame
@@ -27,9 +31,11 @@ public class scr_pollution : MonoBehaviour
         }
     }
 
-    void Kys()
+    IEnumerator kysCoroutine()
     {
-        Destroy(gameObject, 30);
+        yield return new WaitForSeconds(lifetime);
+        player.GetComponent<scr_player>().hp = player.GetComponent<scr_player>().hp - damage;
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter(Collider other)

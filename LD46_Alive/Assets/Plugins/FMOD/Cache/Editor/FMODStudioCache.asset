@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8436604444297216666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: LD46_FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637228503972620278
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8241039212163882345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +33,7 @@ MonoBehaviour:
   Path: event:/SFX/Ambience_Ship_Rumble
   guid: 9c5897fd9ba72143aaae48913bbbaac4
   Banks:
-  - {fileID: -3684285428669577228}
+  - {fileID: -8436604444297216666}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -38,7 +56,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Normal_Fire
   guid: 2695491ee9cd9f4e9b301030d99af873
   Banks:
-  - {fileID: -3684285428669577228}
+  - {fileID: -8436604444297216666}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -79,7 +97,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Suck
   guid: ddbc808295ea1140975f85e8510d9cf0
   Banks:
-  - {fileID: -3684285428669577228}
+  - {fileID: -8436604444297216666}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -122,7 +140,7 @@ MonoBehaviour:
   lastModified: 637228501760000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,17 +155,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 4738726061644407472}
-  - {fileID: -3684285428669577228}
+  - {fileID: -8436604444297216666}
   EditorEvents:
   - {fileID: -7332475775733511988}
   - {fileID: -8241039212163882345}
   - {fileID: -5090038263275668316}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3684285428669577228}
+  - {fileID: -8436604444297216666}
   StringsBanks:
   - {fileID: 4738726061644407472}
-  stringsBankWriteTime: 637228501760000000
+  stringsBankWriteTime: 637228503972630274
   cacheVersion: 3
 --- !u!114 &4738726061644407472
 MonoBehaviour:
@@ -163,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: LD46_FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637228501760000000
+  lastModified: 637228503972630274
   LoadResult: 0
   FileSizes:
   - Name: Desktop
