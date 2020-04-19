@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{5a7df75a-ffc1-4959-b1ee-5141dfe75ea2}">
+		<property name="assetPath">
+			<value>Powerplant_Spawn.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5052834467120182</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{87acfd8e-dc74-4cda-a474-34c7c6bf590f}</destination>
+		</relationship>
+	</object>
+</objects>

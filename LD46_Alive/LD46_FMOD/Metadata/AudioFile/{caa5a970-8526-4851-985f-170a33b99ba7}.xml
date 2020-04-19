@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{caa5a970-8526-4851-985f-170a33b99ba7}">
+		<property name="assetPath">
+			<value>Laser_Ice_Fire.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{87acfd8e-dc74-4cda-a474-34c7c6bf590f}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 782667026}
   - component: {fileID: 782667025}
   - component: {fileID: 782667024}
+  - component: {fileID: 782667027}
   m_Layer: 5
   m_Name: Butt_Beam
   m_TagString: Untagged
@@ -653,6 +654,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782667022}
   m_CullTransparentMesh: 0
+--- !u!114 &782667027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782667022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Laser_Ice_Fire
+  PlayEvent: 13
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &817465974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,37 +1169,37 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0035490892
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00089100935
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.000000011175871
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7660445
+      value: 0.74298793
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.18652923
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.15651658
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6427876
+      value: -0.6234408
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
@@ -1185,17 +1209,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 260
+      value: 240.23001
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -69.52899
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 72.045
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 20b457586be8c2249bb4bd91d4f0d7e2,
         type: 3}
@@ -1679,6 +1703,7 @@ GameObject:
   - component: {fileID: 1630881112}
   - component: {fileID: 1630881111}
   - component: {fileID: 1630881110}
+  - component: {fileID: 1630881113}
   m_Layer: 5
   m_Name: Butt_Suck
   m_TagString: Untagged
@@ -1785,6 +1810,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630881108}
   m_CullTransparentMesh: 0
+--- !u!114 &1630881113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630881108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Laser_Suck
+  PlayEvent: 13
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1730864167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1922,7 @@ GameObject:
   - component: {fileID: 1805316897}
   - component: {fileID: 1805316896}
   - component: {fileID: 1805316895}
+  - component: {fileID: 1805316898}
   m_Layer: 5
   m_Name: Butt_Laser
   m_TagString: Untagged
@@ -1980,3 +2029,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805316893}
   m_CullTransparentMesh: 0
+--- !u!114 &1805316898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805316893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Laser_Normal_Fire
+  PlayEvent: 13
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
