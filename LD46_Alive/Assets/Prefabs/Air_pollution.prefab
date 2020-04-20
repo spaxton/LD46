@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4068638548067193427}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4068638548067193427}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 289301614986012343, guid: 87165f16a3e38a645a39da80d42eeecd, type: 3}
 --- !u!23 &7673563244512956487
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93,8 +93,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2
+  m_Center: {x: -1, y: 0, z: -1}
 --- !u!114 &-140576153295263914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   PolPrefab: {fileID: 4068638548067193427}
   lifetime: 10
   damage: 3
+  IcePrefab: {fileID: 4002658180710646476, guid: c6d7c2e54b07b564d963ab0990addcef,
+    type: 3}
 --- !u!114 &-2662529547249709594
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,22 +6,35 @@ using UnityEngine.UIElements;
 
 public class scr_timer : MonoBehaviour
 {
-    public Text timer_text;
-    float start_time;
+    [SerializeField] Text timer_text;
+    [SerializeField] float start_time;
+    [SerializeField] GameObject enderPrefab;
+    float current_time;
+    bool ended = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        start_time = Time.time;
+        current_time = start_time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float t = Time.time - start_time;
+        if ((current_time <= 0) && (ended == false))
+        {
+            GameObject endgame = Instantiate(enderPrefab, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            ended = true;
+        }
 
-        string minutes = ((int)t / 60).ToString();
-        string seconds = (t % 60).ToString("f1");
+        //float t = Time.time - start_time;
+        current_time -= 1 * Time.deltaTime;
+
+        string minutes = ((int)current_time / 60).ToString();
+        string seconds = (current_time % 60).ToString("f1");
         timer_text.text = minutes + ":" + seconds;
+        //timer_text.text = current_time.ToString();
+
+        
     }
 }

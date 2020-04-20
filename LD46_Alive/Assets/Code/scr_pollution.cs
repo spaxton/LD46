@@ -7,14 +7,16 @@ public class scr_pollution : MonoBehaviour
     public GameObject PolPrefab;
     private Vector3 target = new Vector3(0.0f, 0.0f, 0.0f);
     bool orbiting = true;
+    bool freezed = false;
     public int lifetime;
     public int damage;
     GameObject player;
+    [SerializeField] GameObject IcePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(kysCoroutine());
+        StartCoroutine("kysCoroutine");
         player = GameObject.Find("Space_station");
     }
 
@@ -27,7 +29,14 @@ public class scr_pollution : MonoBehaviour
         }
         else
         {
-            sucked();
+            if (freezed == true)
+            {
+               // frozen(); // Conceal, don't feel
+            }
+            else
+            {
+                sucked();
+            }
         }
     }
 
@@ -44,7 +53,8 @@ public class scr_pollution : MonoBehaviour
         {
             bool suckage = GameObject.Find("Space_station").GetComponent<scr_player>().suck_active;
             bool lasering = GameObject.Find("Space_station").GetComponent<scr_player>().laser_active;
-            if (suckage == true)
+            bool freezing = GameObject.Find("Space_station").GetComponent<scr_player>().beam_active;
+            if ((suckage == true) && (freezed == false))
             {
                 orbiting = false;
             }
@@ -52,6 +62,12 @@ public class scr_pollution : MonoBehaviour
             {
                 GameObject airPollution = Instantiate(PolPrefab, transform.position, new Quaternion(0, 0, 0, 0));
                 airPollution.transform.parent = GameObject.Find("Planet_controller").transform;
+            }
+            if ((freezing == true) && (freezed == false))
+            {
+                frozen();
+                orbiting = false;
+
             }
         }
         if (other.gameObject.CompareTag("station"))
@@ -66,22 +82,30 @@ public class scr_pollution : MonoBehaviour
         if (other.gameObject.CompareTag("ray"))
         {
             bool suckage = GameObject.Find("Space_station").GetComponent<scr_player>().suck_active;
+            bool freezing = GameObject.Find("Space_station").GetComponent<scr_player>().beam_active;
             if (suckage == true)
             {
                 orbiting = false;
             }
+
+            if ((freezing == true) && (freezed == false))
+            {
+                frozen();
+                orbiting = false;
+
+            }
         }
 
     }
-
+    /*
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("ray"))
+        if ((other.gameObject.CompareTag("ray")) && (freezed = false))
         {
             orbiting = true;
         }
     }
-
+    */
     void orbit()
     {
         // Spin the object around the world origin at 10 degrees/second.
@@ -92,5 +116,24 @@ public class scr_pollution : MonoBehaviour
     {
         float step = 1.0f * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, 0.686f, -0.471f), step);
+    }
+
+    void frozen()
+    {
+        StopCoroutine("kysCoroutine");
+            orbiting = false;
+            freezed = true;
+            GameObject elsa = Instantiate(IcePrefab, transform.position, new Quaternion(0, 0, 0, 0));
+            elsa.transform.parent = transform;
+            StartCoroutine("iceCoroutine");
+    }
+
+    IEnumerator iceCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(this.gameObject.transform.GetChild(0).gameObject); // let it go
+        freezed = false;
+        orbiting = true;
+        StartCoroutine("kysCoroutine");
     }
 }

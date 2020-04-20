@@ -39,7 +39,7 @@ public class scr_spawnController : MonoBehaviour
         
         Vector3 spawnPoint = earf.transform.position;
         Vector3 randomDir = Random.onUnitSphere;
-        spawnPoint += (randomDir * (earf.transform.localScale.y/2));
+        spawnPoint += (randomDir * ((earf.transform.localScale.y/2) + 0.05f));
         Vector3 spawnRotation = (spawnPoint - earf.transform.position).normalized;
         
 

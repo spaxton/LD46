@@ -26,6 +26,7 @@ public class scr_player : MonoBehaviour
         ray = this.gameObject.transform.GetChild(0).gameObject;
         suckButt.onClick.AddListener(suckClick);
         laserButt.onClick.AddListener(laserClick);
+        iceButt.onClick.AddListener(beamClick);
     }
 
     // Update is called once per frame
@@ -63,7 +64,7 @@ public class scr_player : MonoBehaviour
     void laserClick()
     {
         laser_active = true;
-        StartCoroutine(laserCoroutine());
+        StartCoroutine("laserCoroutine");
     }
 
     IEnumerator laserCoroutine()
@@ -71,6 +72,19 @@ public class scr_player : MonoBehaviour
         yield return new WaitForSeconds(1);
         laser_active = false;
     }
+
+    void beamClick()
+    {
+        beam_active = true;
+        StartCoroutine("beamCoroutine");
+    }
+
+    IEnumerator beamCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        beam_active = false;
+    }
+
 
     void getInput()
     {
