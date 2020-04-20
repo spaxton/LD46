@@ -51,7 +51,7 @@ MonoBehaviour:
   Path: event:/SFX/Ambience_Ship_Rumble
   guid: 9c5897fd9ba72143aaae48913bbbaac4
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Normal_Fire
   guid: 2695491ee9cd9f4e9b301030d99af873
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: event:/SFX/Object_Explode
   guid: 8de45313834eaf44a20a70a462cc148f
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Suck
   guid: ddbc808295ea1140975f85e8510d9cf0
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
   Path: event:/SFX/Reactor_Spawn
   guid: 8bb7663d0c5b994bb86c7486e928216f
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
   Path: event:/SFX/Object_Frozen
   guid: 714adfeac71e0c4196ff314ea679457b
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -243,7 +243,7 @@ MonoBehaviour:
   Path: event:/SFX/Pollution_Spawn
   guid: 91da41e88d60724c9c39248d041cbfc4
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 4738726061644407472}
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   EditorEvents:
   - {fileID: -7332475775733511988}
   - {fileID: -8241039212163882345}
@@ -295,11 +295,29 @@ MonoBehaviour:
   - {fileID: 1753643616097012001}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   StringsBanks:
   - {fileID: 4738726061644407472}
-  stringsBankWriteTime: 637229038780000000
+  stringsBankWriteTime: 637229052526355960
   cacheVersion: 3
+--- !u!114 &165468399313118814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: LD46_FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637229052526345963
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &602964091653220466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +369,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Ice_Fire
   guid: bdcdf4b7f8eddf42bbefba0e5068e517
   Banks:
-  - {fileID: -400442109131926958}
+  - {fileID: 165468399313118814}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -391,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: LD46_FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637229038780000000
+  lastModified: 637229052526355960
   LoadResult: 0
   FileSizes:
   - Name: Desktop

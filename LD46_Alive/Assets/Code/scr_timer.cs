@@ -11,6 +11,7 @@ public class scr_timer : MonoBehaviour
     [SerializeField] GameObject enderPrefab;
     float current_time;
     bool ended = false;
+    [SerializeField] Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,10 @@ public class scr_timer : MonoBehaviour
     {
         if ((current_time <= 0) && (ended == false))
         {
-            GameObject endgame = Instantiate(enderPrefab, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            GameObject endgame = Instantiate(enderPrefab, new Vector3(Screen.width/2, Screen.height/2, 0), new Quaternion(0, 0, 0, 0));
             ended = true;
+            endgame.transform.parent = canvas.transform;
+            endgame.GetComponent<scr_endgame>().lost = false;
         }
 
         //float t = Time.time - start_time;

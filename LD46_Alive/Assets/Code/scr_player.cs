@@ -20,6 +20,13 @@ public class scr_player : MonoBehaviour
 
     GameObject ray;
 
+    [SerializeField] Canvas canvas;
+
+    // Instantiate sounds
+    FMOD.Studio.EventInstance sfx_laser;
+    FMOD.Studio.EventInstance sfx_suck;
+    FMOD.Studio.EventInstance sfx_beam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +34,10 @@ public class scr_player : MonoBehaviour
         suckButt.onClick.AddListener(suckClick);
         laserButt.onClick.AddListener(laserClick);
         iceButt.onClick.AddListener(beamClick);
+
+        sfx_suck = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Laser_Suck");
+        sfx_laser = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Laser_Normal_Fire");
+        sfx_beam = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Laser_Ice_Fire");
     }
 
     // Update is called once per frame
@@ -41,7 +52,8 @@ public class scr_player : MonoBehaviour
     {
         if ((hp <= 0) && (ended == false))
         {
-            GameObject endgame = Instantiate(enderPrefab, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+            GameObject endgame = Instantiate(enderPrefab, new Vector3(Screen.width / 2, Screen.height / 2, 0), new Quaternion(0, 0, 0, 0));
+            endgame.transform.parent = canvas.transform;
             ended = true;
         }
         hp_text.text = " Planet HP: " + hp;
@@ -49,22 +61,22 @@ public class scr_player : MonoBehaviour
 
     void suckClick()
     {
-        if(suck_active == false)
-        {
-            suck_active = true;
-            suckButt.GetComponentInChildren<Text>().text = "Sucker - On";
-        }
-        else
-        {
-            suck_active = false;
-            suckButt.GetComponentInChildren<Text>().text = "Sucker - Off";
-        }
+        suck_active = true;
+        StartCoroutine("suckCoroutine");
+        sfx_suck.start();
+    }
+
+    IEnumerator suckCoroutine()
+    {
+        yield return new WaitForSeconds(3);
+        suck_active = false;
     }
 
     void laserClick()
     {
         laser_active = true;
         StartCoroutine("laserCoroutine");
+        sfx_laser.start();
     }
 
     IEnumerator laserCoroutine()
@@ -77,6 +89,7 @@ public class scr_player : MonoBehaviour
     {
         beam_active = true;
         StartCoroutine("beamCoroutine");
+        sfx_beam.start();
     }
 
     IEnumerator beamCoroutine()
@@ -132,22 +145,7 @@ public class scr_player : MonoBehaviour
         }
         if ((suck_active == false) && (laser_active == false) && (beam_active == false))
         {
-            ray_color.material.SetColor("_Color", Color.magenta);
+            ray_color.material.SetColor("_Color", Color.clear);
         }
-    }
-
-    void fireSuck()
-    {
-
-    }
-
-    void fireLaser()
-    {
-
-    }
-
-    void fireBeam()
-    {
-
     }
 }
