@@ -57,11 +57,15 @@
   <ItemGroup>
      <Compile Include="Assets\Code\scr_endgame.cs" />
      <Compile Include="Assets\Code\scr_factory.cs" />
+     <Compile Include="Assets\Code\scr_orbit.cs" />
      <Compile Include="Assets\Code\scr_player.cs" />
      <Compile Include="Assets\Code\scr_pollution.cs" />
+     <Compile Include="Assets\Code\scr_radiation.cs" />
+     <Compile Include="Assets\Code\scr_reactor.cs" />
      <Compile Include="Assets\Code\scr_rotation.cs" />
      <Compile Include="Assets\Code\scr_spawnController.cs" />
      <Compile Include="Assets\Code\scr_timer.cs" />
+     <Compile Include="Assets\Code\scr_title.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/sethpaxton/Desktop/Projects/LD46_disasterous/LD46/LD46_Alive/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

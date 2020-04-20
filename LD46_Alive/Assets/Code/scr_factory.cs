@@ -5,7 +5,7 @@ using UnityEngine;
 public class scr_factory : MonoBehaviour
 {
     public GameObject PolPrefab;
-    public GameObject earf;
+    GameObject earf;
     int spawn_delay;
     bool pol_spawned = false;
     [SerializeField] GameObject IcePrefab;
@@ -32,7 +32,7 @@ public class scr_factory : MonoBehaviour
 
     void spawnAirPol()
     {
-        GameObject airPollution = Instantiate(PolPrefab, transform.position, new Quaternion(0, 0, 0, 0));
+        GameObject airPollution = Instantiate(PolPrefab, transform.position, transform.rotation);
         airPollution.transform.parent = earf.transform;
     }
 
@@ -98,7 +98,7 @@ public class scr_factory : MonoBehaviour
     {
             StopCoroutine("spawnCoroutine");
             freezed = true;
-            GameObject elsa = Instantiate(IcePrefab, transform.position, new Quaternion(0, 0, 0, 0));
+            GameObject elsa = Instantiate(IcePrefab, transform.position, transform.rotation);
             elsa.transform.parent = transform;
             StartCoroutine("iceCoroutine");
     }

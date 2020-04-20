@@ -12,10 +12,12 @@ public class scr_pollution : MonoBehaviour
     public int damage;
     GameObject player;
     [SerializeField] GameObject IcePrefab;
+    int set;
 
     // Start is called before the first frame update
     void Start()
     {
+        set = Random.Range(1, 4);
         StartCoroutine("kysCoroutine");
         player = GameObject.Find("Space_station");
     }
@@ -60,7 +62,7 @@ public class scr_pollution : MonoBehaviour
             }
             if (lasering == true)
             {
-                GameObject airPollution = Instantiate(PolPrefab, transform.position, new Quaternion(0, 0, 0, 0));
+                GameObject airPollution = Instantiate(PolPrefab, transform.position, transform.rotation);
                 airPollution.transform.parent = GameObject.Find("Planet_controller").transform;
             }
             if ((freezing == true) && (freezed == false))
@@ -97,19 +99,26 @@ public class scr_pollution : MonoBehaviour
         }
 
     }
-    /*
-    void OnTriggerExit(Collider other)
-    {
-        if ((other.gameObject.CompareTag("ray")) && (freezed = false))
-        {
-            orbiting = true;
-        }
-    }
-    */
+
     void orbit()
     {
-        // Spin the object around the world origin at 10 degrees/second.
-        transform.RotateAround(target, new Vector3(1, 0, 0), 10 * Time.deltaTime);
+        // Spin the object around the world origin in a random direction at 10 degrees/second.
+        if (set == 1)
+        {
+            transform.RotateAround(target, new Vector3(1, 0, 0), 10 * Time.deltaTime);
+        }
+        if (set == 2)
+        {
+            transform.RotateAround(target, new Vector3(-1, 0, 0), 10 * Time.deltaTime);
+        }
+        if (set == 3)
+        {
+            transform.RotateAround(target, new Vector3(0, 0, 1), 10 * Time.deltaTime);
+        }
+        if (set == 4)
+        {
+            transform.RotateAround(target, new Vector3(0, 0, -1), 10 * Time.deltaTime);
+        }
     }
 
     void sucked()
@@ -123,7 +132,7 @@ public class scr_pollution : MonoBehaviour
         StopCoroutine("kysCoroutine");
             orbiting = false;
             freezed = true;
-            GameObject elsa = Instantiate(IcePrefab, transform.position, new Quaternion(0, 0, 0, 0));
+            GameObject elsa = Instantiate(IcePrefab, transform.position, transform.rotation);
             elsa.transform.parent = transform;
             StartCoroutine("iceCoroutine");
     }

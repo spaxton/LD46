@@ -9,10 +9,14 @@ public class scr_endgame : MonoBehaviour
     public bool lost = true;
     [SerializeField] Text title;
     [SerializeField] Text content;
+    [SerializeField] Button tryagain;
+    string currentScene;
 
     // Start is called before the first frame update
     void Start()
     {
+        tryagain.onClick.AddListener(TryAgainClick);
+        currentScene = SceneManager.GetActiveScene().name;
         messaging();
         Time.timeScale = 0.00001f;
     }
@@ -23,15 +27,15 @@ public class scr_endgame : MonoBehaviour
         
     }
 
-    public void ResetLevel()
+    void TryAgainClick()
+    {
+        SceneManager.LoadScene(currentScene);
+    }
+
+    public void GoToTitle()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
     }
 
     void messaging()

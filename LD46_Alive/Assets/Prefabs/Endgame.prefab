@@ -194,18 +194,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6993068298260481045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5157322307022567437}
-        m_MethodName: ResetLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &4360621397101409936
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit Game
+  m_Text: Return to Title Screen
 --- !u!1 &5293583767224384688
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +391,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5157322307022567437}
-        m_MethodName: ExitGame
+        m_MethodName: GoToTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -541,6 +530,7 @@ MonoBehaviour:
   lost: 1
   title: {fileID: 2204476073783937012}
   content: {fileID: 5986163769231488411}
+  tryagain: {fileID: 2217273956748334204}
 --- !u!1 &8212490794817357123
 GameObject:
   m_ObjectHideFlags: 0
