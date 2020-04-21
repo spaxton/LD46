@@ -44,7 +44,7 @@ public class scr_player : MonoBehaviour
     void Update()
     {
         updateUI();
-        getInput();
+        //getInput();
         setRay();
     }
 
@@ -98,8 +98,8 @@ public class scr_player : MonoBehaviour
         beam_active = false;
     }
 
-
-    void getInput()
+    /*
+    void getInput() // for keyboard controlls
     {
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -127,6 +127,7 @@ public class scr_player : MonoBehaviour
             beam_active = false;
         }
     }
+    */
 
     void setRay()
     {

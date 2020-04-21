@@ -9,6 +9,7 @@ TagManager:
   - ray
   - station
   - factory
+  - game_butt
   layers:
   - Default
   - TransparentFX

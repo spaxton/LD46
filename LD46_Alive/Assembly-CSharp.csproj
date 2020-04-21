@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\scr_HPeval.cs" />
      <Compile Include="Assets\Code\scr_endgame.cs" />
      <Compile Include="Assets\Code\scr_factory.cs" />
      <Compile Include="Assets\Code\scr_orbit.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets\Code\scr_pollution.cs" />
      <Compile Include="Assets\Code\scr_radiation.cs" />
      <Compile Include="Assets\Code\scr_reactor.cs" />
+     <Compile Include="Assets\Code\scr_rot.cs" />
      <Compile Include="Assets\Code\scr_rotation.cs" />
      <Compile Include="Assets\Code\scr_spawnController.cs" />
      <Compile Include="Assets\Code\scr_timer.cs" />

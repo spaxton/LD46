@@ -14,7 +14,7 @@ public class scr_title : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.Rotate(0, 0.01f, 0, Space.Self);
+        
     }
 
     public void LoadLvl1()

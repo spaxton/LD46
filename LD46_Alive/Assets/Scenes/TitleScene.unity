@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 66279340}
   - component: {fileID: 66279339}
   - component: {fileID: 66279337}
+  - component: {fileID: 66279338}
   m_Layer: 0
   m_Name: Planet_controller
   m_TagString: earf
@@ -154,6 +155,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4e9a69e972ea34fa342e374d023a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &66279338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66279336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbc9f2b14fa5f245ab958f9a755821a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeed: -0.01
 --- !u!54 &66279339
 Rigidbody:
   m_ObjectHideFlags: 0

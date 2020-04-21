@@ -45,30 +45,15 @@ public class scr_reactor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("ray"))
-        {
-            bool lasering = GameObject.Find("Space_station").GetComponent<scr_player>().laser_active;
-            bool freezing = GameObject.Find("Space_station").GetComponent<scr_player>().beam_active;
-            if (lasering == true)
-            {
-                if (freezed == false)
-                {
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    thawed();
-                }
-            }
-            if ((freezing == true) && (freezed == false))
-            {
-                frozen();
-            }
-        }
-
+        evalRay(other);
     }
 
     void OnTriggerStay(Collider other)
+    {
+        evalRay(other);
+    }
+
+    void evalRay(Collider other)
     {
         if (other.gameObject.CompareTag("ray"))
         {
@@ -76,9 +61,11 @@ public class scr_reactor : MonoBehaviour
             bool freezing = GameObject.Find("Space_station").GetComponent<scr_player>().beam_active;
             if (lasering == true)
             {
-                if (freezed == false)
+                if ((freezed == false) && (invulnerable == false))
                 {
-                    Destroy(gameObject);
+                    spawnAirRad();
+                    invulnerable = true;
+                    StartCoroutine("invCoroutine");
                 }
                 else
                 {
@@ -89,9 +76,7 @@ public class scr_reactor : MonoBehaviour
             {
                 frozen();
             }
-
         }
-
     }
 
     void frozen()

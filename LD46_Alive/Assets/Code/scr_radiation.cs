@@ -13,6 +13,7 @@ public class scr_radiation : MonoBehaviour
     GameObject player;
     [SerializeField] GameObject IcePrefab;
     int set;
+    bool invulnerable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class scr_radiation : MonoBehaviour
         set = Random.Range(1, 4);
         StartCoroutine("kysCoroutine");
         player = GameObject.Find("Space_station");
+        invulnerable = true;
+        StartCoroutine("invCoroutine");
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class scr_radiation : MonoBehaviour
         }
         else
         {
+            /*
             if (freezed == true)
             {
                 // frozen(); // Conceal, don't feel
@@ -39,6 +43,7 @@ public class scr_radiation : MonoBehaviour
             {
                 sucked();
             }
+            */
         }
     }
 
@@ -51,19 +56,44 @@ public class scr_radiation : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        evalRay(other);
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        evalRay(other);
+    }
+
+    void evalRay(Collider other)
+    {
         if (other.gameObject.CompareTag("ray"))
         {
             bool suckage = GameObject.Find("Space_station").GetComponent<scr_player>().suck_active;
             bool lasering = GameObject.Find("Space_station").GetComponent<scr_player>().laser_active;
             bool freezing = GameObject.Find("Space_station").GetComponent<scr_player>().beam_active;
-            if ((suckage == true) && (freezed == false))
+            if ((suckage == true) && (invulnerable == false))
             {
-                orbiting = false;
+                if (freezed == false)
+                {
+                    GameObject airRadiation = Instantiate(RadPrefab, transform.position, transform.rotation);
+                    airRadiation.transform.parent = GameObject.Find("Planet_controller").transform;
+                }
+                else
+                {
+                    sucked();
+                }
             }
             if (lasering == true)
             {
-                GameObject airPollution = Instantiate(RadPrefab, transform.position, transform.rotation);
-                airPollution.transform.parent = GameObject.Find("Planet_controller").transform;
+                if ((freezed == false) && (invulnerable == false))
+                {
+                    player.GetComponent<scr_player>().hp = player.GetComponent<scr_player>().hp - (damage * 2);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    thawed();
+                }
             }
             if ((freezing == true) && (freezed == false))
             {
@@ -76,28 +106,6 @@ public class scr_radiation : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("ray"))
-        {
-            bool suckage = GameObject.Find("Space_station").GetComponent<scr_player>().suck_active;
-            bool freezing = GameObject.Find("Space_station").GetComponent<scr_player>().beam_active;
-            if (suckage == true)
-            {
-                orbiting = false;
-            }
-
-            if ((freezing == true) && (freezed == false))
-            {
-                frozen();
-                orbiting = false;
-
-            }
-        }
-
     }
 
     void orbit()
@@ -144,5 +152,23 @@ public class scr_radiation : MonoBehaviour
         freezed = false;
         orbiting = true;
         StartCoroutine("kysCoroutine");
+    }
+
+    void thawed()
+    {
+        StopCoroutine("iceCoroutine");
+        if (this.gameObject.transform.childCount != 0)
+        {
+            Destroy(this.gameObject.transform.GetChild(0).gameObject); // let it go
+        }
+        freezed = false;
+        invulnerable = true;
+        StartCoroutine("invCoroutine");
+    }
+
+    IEnumerator invCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        invulnerable = false;
     }
 }
