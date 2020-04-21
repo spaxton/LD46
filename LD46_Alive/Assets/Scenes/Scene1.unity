@@ -1584,6 +1584,7 @@ GameObject:
   - component: {fileID: 1505348825}
   - component: {fileID: 1505348824}
   - component: {fileID: 1505348826}
+  - component: {fileID: 1505348827}
   m_Layer: 0
   m_Name: Space_station
   m_TagString: station
@@ -1705,7 +1706,7 @@ MonoBehaviour:
   CollisionTag: 
   Event: event:/SFX/Ambience_Ship_Rumble
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -1743,6 +1744,31 @@ MonoBehaviour:
   enderPrefab: {fileID: 7672031734637865270, guid: e99d618667a49bb458bba6c92fccd0d7,
     type: 3}
   canvas: {fileID: 1422328744}
+--- !u!114 &1505348827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505348818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Music
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Health
+    Value: 3
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1521783300
 GameObject:
   m_ObjectHideFlags: 0
