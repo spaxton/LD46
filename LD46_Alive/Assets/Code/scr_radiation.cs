@@ -13,7 +13,7 @@ public class scr_radiation : MonoBehaviour
     GameObject player;
     [SerializeField] GameObject IcePrefab;
     int set;
-    bool invulnerable = false;
+    bool invulnerable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,6 @@ public class scr_radiation : MonoBehaviour
         set = Random.Range(1, 4);
         StartCoroutine("kysCoroutine");
         player = GameObject.Find("Space_station");
-        invulnerable = true;
         StartCoroutine("invCoroutine");
     }
 
@@ -77,6 +76,8 @@ public class scr_radiation : MonoBehaviour
                 {
                     GameObject airRadiation = Instantiate(RadPrefab, transform.position, transform.rotation);
                     airRadiation.transform.parent = GameObject.Find("Planet_controller").transform;
+                    invulnerable = true;
+                    StartCoroutine("invCoroutine");
                 }
                 else
                 {

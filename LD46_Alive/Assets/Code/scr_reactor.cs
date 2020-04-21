@@ -23,7 +23,7 @@ public class scr_reactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((rad_spawned == true) && (freezed == false))
+        if ((rad_spawned == true) && (freezed == false) && (invulnerable == false))
         {
             StartCoroutine("spawnCoroutine");
             rad_spawned = false;
@@ -63,7 +63,9 @@ public class scr_reactor : MonoBehaviour
             {
                 if ((freezed == false) && (invulnerable == false))
                 {
+                    StopCoroutine("spawnCoroutine");
                     spawnAirRad();
+                    rad_spawned = true;
                     invulnerable = true;
                     StartCoroutine("invCoroutine");
                 }
@@ -102,6 +104,7 @@ public class scr_reactor : MonoBehaviour
 
     IEnumerator invCoroutine()
     {
+        StopCoroutine("spawnCoroutine");
         yield return new WaitForSeconds(1);
         invulnerable = false;
     }

@@ -13,6 +13,7 @@ public class scr_pollution : MonoBehaviour
     GameObject player;
     [SerializeField] GameObject IcePrefab;
     int set;
+    [SerializeField] bool invulnerable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class scr_pollution : MonoBehaviour
         set = Random.Range(1, 4);
         StartCoroutine("kysCoroutine");
         player = GameObject.Find("Space_station");
+        StartCoroutine("invCoroutine");
     }
 
     // Update is called once per frame
@@ -60,10 +62,12 @@ public class scr_pollution : MonoBehaviour
             {
                 orbiting = false;
             }
-            if (lasering == true)
+            if ((lasering == true) && (invulnerable == false))
             {
                 GameObject airPollution = Instantiate(PolPrefab, transform.position, transform.rotation);
                 airPollution.transform.parent = GameObject.Find("Planet_controller").transform;
+                invulnerable = true;
+                StartCoroutine("invCoroutine");
             }
             if ((freezing == true) && (freezed == false))
             {
@@ -144,5 +148,11 @@ public class scr_pollution : MonoBehaviour
         freezed = false;
         orbiting = true;
         StartCoroutine("kysCoroutine");
+    }
+
+    IEnumerator invCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        invulnerable = false;
     }
 }
