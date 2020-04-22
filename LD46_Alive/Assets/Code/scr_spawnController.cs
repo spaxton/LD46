@@ -6,12 +6,12 @@ public class scr_spawnController : MonoBehaviour
 {
     public GameObject FactoryPrefab;
     [SerializeField] GameObject ReactorPrefab;
-    public int initialSpawnF = 5;
-    public int initialSpawnR = 5;
+    public int initialSpawnF = 0;
+    public int initialSpawnR = 0;
 
     public GameObject earf;
-    public int spawn_delayF = 5;
-    public int spawn_delayR = 5;
+    public int spawn_delayF = 0;
+    public int spawn_delayR = 0;
     bool factory_spawned = false;
     bool reactor_spawned = false;
 
