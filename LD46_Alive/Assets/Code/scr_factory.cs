@@ -45,31 +45,17 @@ public class scr_factory : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("ray"))
-        {
-            bool lasering = GameObject.Find("Space_station").GetComponent<scr_player>().laser_active;
-            bool freezing = GameObject.Find("Space_station").GetComponent<scr_player>().beam_active;
-            if (lasering == true)
-            {
-                if ((freezed == false) && (invulnerable == false))
-                {
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    thawed();
-                }
-            }
-            if ((freezing == true) && (freezed == false))
-            {
-                frozen();
-            }
-        }
+        evalRay(other);
 
     }
 
     void OnTriggerStay(Collider other)
     {
+        evalRay(other);
+    }
+
+    void evalRay(Collider other)
+    {
         if (other.gameObject.CompareTag("ray"))
         {
             bool lasering = GameObject.Find("Space_station").GetComponent<scr_player>().laser_active;
@@ -89,18 +75,16 @@ public class scr_factory : MonoBehaviour
             {
                 frozen();
             }
-
         }
-
     }
 
     void frozen()
     {
-            StopCoroutine("spawnCoroutine");
-            freezed = true;
-            GameObject elsa = Instantiate(IcePrefab, transform.position, transform.rotation);
-            elsa.transform.parent = transform;
-            StartCoroutine("iceCoroutine");
+        StopCoroutine("spawnCoroutine");
+        freezed = true;
+        GameObject elsa = Instantiate(IcePrefab, transform.position, transform.rotation);
+        elsa.transform.parent = transform;
+        StartCoroutine("iceCoroutine");
     }
 
     IEnumerator iceCoroutine()
@@ -129,5 +113,4 @@ public class scr_factory : MonoBehaviour
         yield return new WaitForSeconds(1);
         invulnerable = false;
     }
-
 }

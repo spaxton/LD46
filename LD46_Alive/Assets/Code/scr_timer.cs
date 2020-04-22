@@ -28,6 +28,7 @@ public class scr_timer : MonoBehaviour
             ended = true;
             endgame.transform.parent = canvas.transform;
             endgame.GetComponent<scr_endgame>().lost = false;
+            this.gameObject.GetComponent<scr_player>().ended = true;
         }
 
         //float t = Time.time - start_time;

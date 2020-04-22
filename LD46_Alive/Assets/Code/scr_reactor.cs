@@ -69,7 +69,7 @@ public class scr_reactor : MonoBehaviour
                     invulnerable = true;
                     StartCoroutine("invCoroutine");
                 }
-                else
+                if ((freezed == true) && (invulnerable == false))
                 {
                     thawed();
                 }
@@ -91,7 +91,6 @@ public class scr_reactor : MonoBehaviour
 
     void thawed()
     {
-        StopCoroutine("iceCoroutine");
         if (this.gameObject.transform.childCount != 0)
         {
             Destroy(this.gameObject.transform.GetChild(0).gameObject); // let it go
@@ -104,7 +103,6 @@ public class scr_reactor : MonoBehaviour
 
     IEnumerator invCoroutine()
     {
-        StopCoroutine("spawnCoroutine");
         yield return new WaitForSeconds(1);
         invulnerable = false;
     }

@@ -29,6 +29,7 @@ public class scr_endgame : MonoBehaviour
 
     void TryAgainClick()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(currentScene);
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class scr_player : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class scr_player : MonoBehaviour
     public int hp = 100;
     public Text hp_text;
     public GameObject enderPrefab;
-    bool ended = false;
+    public bool ended = false;
 
     public Button suckButt;
     public Button laserButt;
@@ -46,6 +47,20 @@ public class scr_player : MonoBehaviour
         updateUI();
         //getInput();
         setRay();
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            string currentScene;
+            currentScene = SceneManager.GetActiveScene().name;
+            if (currentScene == "TitleScene")
+            {
+                Application.Quit();
+            }
+            else
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 
     void updateUI()
@@ -56,14 +71,17 @@ public class scr_player : MonoBehaviour
             endgame.transform.parent = canvas.transform;
             ended = true;
         }
-        hp_text.text = " Planet HP: " + hp;
+        hp_text.text = "Habitability: " + hp + "%";
     }
 
     void suckClick()
     {
-        suck_active = true;
-        StartCoroutine("suckCoroutine");
-        sfx_suck.start();
+        if (ended == false)
+        {
+            suck_active = true;
+            StartCoroutine("suckCoroutine");
+            sfx_suck.start();
+        }
     }
 
     IEnumerator suckCoroutine()
@@ -74,9 +92,12 @@ public class scr_player : MonoBehaviour
 
     void laserClick()
     {
-        laser_active = true;
-        StartCoroutine("laserCoroutine");
-        sfx_laser.start();
+        if (ended == false)
+        {
+            laser_active = true;
+            StartCoroutine("laserCoroutine");
+            sfx_laser.start();
+        }
     }
 
     IEnumerator laserCoroutine()
@@ -87,9 +108,12 @@ public class scr_player : MonoBehaviour
 
     void beamClick()
     {
-        beam_active = true;
-        StartCoroutine("beamCoroutine");
-        sfx_beam.start();
+        if (ended == false)
+        {
+            beam_active = true;
+            StartCoroutine("beamCoroutine");
+            sfx_beam.start();
+        }
     }
 
     IEnumerator beamCoroutine()

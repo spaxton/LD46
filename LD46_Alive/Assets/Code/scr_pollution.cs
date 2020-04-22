@@ -18,6 +18,7 @@ public class scr_pollution : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        invulnerable = true;
         set = Random.Range(1, 4);
         StartCoroutine("kysCoroutine");
         player = GameObject.Find("Space_station");
@@ -64,16 +65,15 @@ public class scr_pollution : MonoBehaviour
             }
             if ((lasering == true) && (invulnerable == false))
             {
+                invulnerable = true;
                 GameObject airPollution = Instantiate(PolPrefab, transform.position, transform.rotation);
                 airPollution.transform.parent = GameObject.Find("Planet_controller").transform;
-                invulnerable = true;
                 StartCoroutine("invCoroutine");
             }
             if ((freezing == true) && (freezed == false))
             {
                 frozen();
                 orbiting = false;
-
             }
         }
         if (other.gameObject.CompareTag("station"))
