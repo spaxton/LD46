@@ -51,7 +51,7 @@ MonoBehaviour:
   Path: event:/SFX/Ambience_Ship_Rumble
   guid: 9c5897fd9ba72143aaae48913bbbaac4
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Normal_Fire
   guid: 2695491ee9cd9f4e9b301030d99af873
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -132,7 +132,7 @@ MonoBehaviour:
   Path: event:/SFX/Object_Explode
   guid: 8de45313834eaf44a20a70a462cc148f
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -173,7 +173,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Suck
   guid: ddbc808295ea1140975f85e8510d9cf0
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -196,7 +196,7 @@ MonoBehaviour:
   Path: event:/SFX/Reactor_Spawn
   guid: 8bb7663d0c5b994bb86c7486e928216f
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -219,7 +219,7 @@ MonoBehaviour:
   Path: event:/SFX/Object_Frozen
   guid: 714adfeac71e0c4196ff314ea679457b
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -295,7 +295,7 @@ MonoBehaviour:
   Path: event:/SFX/Lose
   guid: 6285b9168c5f5e428d73ee0f1275a01b
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -337,7 +337,7 @@ MonoBehaviour:
   lastModified: 637231744390000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2348818127857266308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   Path: event:/SFX/Pollution_Spawn
   guid: 91da41e88d60724c9c39248d041cbfc4
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -395,7 +395,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-674546946918561726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 4738726061644407472}
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   EditorEvents:
   - {fileID: -7332475775733511988}
   - {fileID: -8241039212163882345}
@@ -460,10 +460,10 @@ MonoBehaviour:
   - {fileID: 7502240707033534959}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   StringsBanks:
   - {fileID: 4738726061644407472}
-  stringsBankWriteTime: 637231744390000000
+  stringsBankWriteTime: 637231781970000000
   cacheVersion: 3
 --- !u!114 &165468399313118814
 MonoBehaviour:
@@ -570,7 +570,7 @@ MonoBehaviour:
   Path: event:/SFX/Laser_Ice_Fire
   guid: bdcdf4b7f8eddf42bbefba0e5068e517
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -665,12 +665,12 @@ MonoBehaviour:
   Path: event:/Music/Music
   guid: 6033eb7bd7708f4ab7279b46a5fc0237
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -921431535143348727}
+  - {fileID: 5382431033307146876}
   MinDistance: 0
   MaxDistance: 0
   Length: 22500
@@ -722,11 +722,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: LD46_FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637231744390000000
+  lastModified: 637231781970000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 1262
+  Exists: 1
+--- !u!114 &5382431033307146876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &5429431419922845015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: LD46_FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637231781970000000
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &7100007319331449647
 MonoBehaviour:
@@ -761,7 +796,7 @@ MonoBehaviour:
   Path: event:/SFX/Win
   guid: 8f78eb5b403636489e47a58319d9f1e9
   Banks:
-  - {fileID: -2444753290889050684}
+  - {fileID: 5429431419922845015}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
