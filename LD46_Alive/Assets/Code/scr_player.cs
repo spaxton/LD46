@@ -22,6 +22,7 @@ public class scr_player : MonoBehaviour
     GameObject ray;
 
     [SerializeField] Canvas canvas;
+    [SerializeField] GameObject PopupPrefab;
 
     // Instantiate sounds
     FMOD.Studio.EventInstance sfx_laser;
@@ -31,6 +32,9 @@ public class scr_player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject pop = Instantiate(PopupPrefab, new Vector3(Screen.width / 2, Screen.height / 2, 0), new Quaternion(0, 0, 0, 0));
+        pop.transform.parent = canvas.transform;
+
         ray = this.gameObject.transform.GetChild(0).gameObject;
         suckButt.onClick.AddListener(suckClick);
         laserButt.onClick.AddListener(laserClick);

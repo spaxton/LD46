@@ -1691,6 +1691,8 @@ MonoBehaviour:
   laserButt: {fileID: 1805316895}
   iceButt: {fileID: 782667024}
   canvas: {fileID: 1422328744}
+  PopupPrefab: {fileID: 1541463311465792776, guid: ce985c1c0210d4949a6e8169d0a511f2,
+    type: 3}
 --- !u!114 &1505348824
 MonoBehaviour:
   m_ObjectHideFlags: 0
